@@ -3,6 +3,7 @@ for(let i = 0; i<3; i++){
         const text = this.innerHTML;
         //console.log(text)
         audioPlay(text);
+        playAnimation(text);
     });
 }
 
@@ -21,4 +22,13 @@ function audioPlay(text){
         audio.play();
         break;
     }
+   }
+
+   function playAnimation (text){
+    let selectedButton = document.querySelector("." + text);
+    selectedButton.classList.add("anim");
+
+    setTimeout(function(){
+        selectedButton.classList.remove("anim"); 
+    } , 1000);
    }
